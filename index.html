@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG's Moto-Hub - Motorcycle Encyclopedia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa fa-motorcycle me-2"></i>OG's Moto-Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('types')">Types</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="techDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tech Demo</a>
+                        <ul class="dropdown-menu" aria-labelledby="techDropdown">
+                            <li><a class="dropdown-item" href="fullstack.html" onclick="scrollToSection('tech')">Full Stack Development</a></li>
+                            <li><a class="dropdown-item" href="html-demo.html" onclick="scrollToSection('tech')">HTML</a></li>
+                            <li><a class="dropdown-item" href="css.html" onclick="scrollToSection('tech')">CSS</a></li>
+                            <li><a class="dropdown-item" href="bootstrap.html" onclick="scrollToSection('tech')">Bootstrap Framework</a></li>
+                            <li><a class="dropdown-item" href="javascript-demo.html" onclick="scrollToSection('tech')">JavaScript</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);" onclick="scrollToSection('about')">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link theme-toggle" href="javascript:void(0)" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-sun"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Welcome</h1>
+            <p class="lead">My little knowledge about motorcycles</p>
+            <button class="btn btn-primary btn-lg mt-3" onclick="scrollToSection('types')">Explore Bikes</button>
+        </div>
+    </header>
+
+    <!-- Motorcycle Types Section -->
+    <section id="types" class="container py-5">
+        <h2 class="text-center section-title">Types of Motorcycles</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/sport bike.png" class="bike-type-img" alt="Sport Bike">
+                    <div class="card-body">
+                        <h5 class="card-title">Sport Bikes</h5>
+                        <p class="card-text">Built for speed and performance with aerodynamic designs, powerful engines, and responsive handling.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bikeModal" data-bike-type="Sport Bike" data-bike-img="images/sport bike.png">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/cruiser.png" class="bike-type-img" alt="Cruiser">
+                    <div class="card-body">
+                        <h5 class="card-title">Cruisers</h5>
+                        <p class="card-text">Designed for comfortable riding with a relaxed position, low seat height, and classic styling.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bikeModal" data-bike-type="Cruiser" data-bike-img="images/cruiser.png">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/tour.png" class="bike-type-img" alt="Touring">
+                    <div class="card-body">
+                        <h5 class="card-title">Touring Bikes</h5>
+                        <p class="card-text">Built for long-distance comfort with large windshields, comfortable seating, and ample storage.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bikeModal" data-bike-type="Touring Bike" data-bike-img="images/tour.png">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button id="showMoreBtn" class="btn btn-primary">Show More Types</button>
+        </div>
+        <div id="moreTypes" class="row mt-4" style="display: none;">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/adv.png" class="bike-type-img" alt="Adventure">
+                    <div class="card-body">
+                        <h5 class="card-title">Adventure Bikes</h5>
+                        <p class="card-text">Designed for both on-road and off-road riding with long-travel suspension and rugged capabilities.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bikeModal" data-bike-type="Adventure Bike" data-bike-img="images/adv.png">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/naked.png" class="bike-type-img" alt="Naked">
+                    <div class="card-body">
+                        <h5 class="card-title">Naked Bikes</h5>
+                        <p class="card-text">Sporty motorcycles without fairings, emphasizing agility and minimalist design.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bikeModal" data-bike-type="Naked Bike" data-bike-img="images/naked.png">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/scooty.png" class="bike-type-img" alt="Scooter">
+                    <div class="card-body">
+                        <h5 class="card-title">Scooters</h5>
+                        <p class="card-text">Practical urban transportation with step-through design, automatic transmission, and storage space.</p>
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#bikeModal" data-bike-type="Scooter" data-bike-img="images/scooty.png">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">About This Website</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Development Details</h5>
+                            <p>This website was created as a demonstration of full stack development skills, showcasing:</p>
+                            <ul>
+                                <li><strong>HTML5</strong> for semantic structure and content</li>
+                                <li><strong>CSS3</strong> for styling, animations, and responsive design</li>
+                                <li><strong>Bootstrap 5</strong> for layout and UI components</li>
+                                <li><strong>JavaScript</strong> for interactivity and dynamic content</li>
+                                <li><strong>Full Stack Concepts</strong> for understanding client-server architecture</li>
+                            </ul>
+                            <p>The website is fully responsive and works on all device sizes from mobile to desktop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 OG's Moto-Hub. All rights reserved.</p>
+            <p>This website is made by OG for educational purposes.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bike Modal -->
+    <div class="modal fade" id="bikeModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bikeModalLabel">Motorcycle Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalBikeImage" src="" class="img-fluid mb-3" alt="Motorcycle">
+                    <h4 id="bikeType"></h4>
+                    <p id="bikeDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
