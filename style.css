@@ -48,7 +48,7 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.404), rgba(0, 0, 0, 0.7)), url('images/hero.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.404), rgba(0, 0, 0, 0.7)), url('hero.jpg') center/cover no-repeat;
             color: white;
             padding: 185px;
             text-align: center;
@@ -347,4 +347,5 @@
 .dark-mode .navbar-dark .navbar-nav .dropdown-item:focus {
     background-color: var(--primary-color) !important;
     color: white !important;
+
 }
